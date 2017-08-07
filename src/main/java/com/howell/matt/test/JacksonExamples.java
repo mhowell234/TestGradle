@@ -16,6 +16,7 @@ import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
 import com.fasterxml.jackson.dataformat.protobuf.schema.NativeProtobufSchema;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 import com.fasterxml.jackson.dataformat.protobuf.schemagen.ProtobufSchemaGenerator;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.google.common.collect.ImmutableList;
 
@@ -44,6 +45,7 @@ public class JacksonExamples {
         print("JSON", ObjectMapper::new, testPojo);
         print("ION", IonObjectMapper::new, testPojo);
         print("YAML", YAMLMapper::new, testPojo);
+        print("XML", XmlMapper::new, testPojo);
         printWithWriter("CSV", this::csvWriter, testPojo);
         printAvro("AVRO", testPojo);
         printCBOR("CBOR", testPojo);
