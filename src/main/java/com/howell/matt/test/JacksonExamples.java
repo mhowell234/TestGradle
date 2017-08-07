@@ -16,6 +16,7 @@ import com.fasterxml.jackson.dataformat.protobuf.ProtobufFactory;
 import com.fasterxml.jackson.dataformat.protobuf.schema.NativeProtobufSchema;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
 import com.fasterxml.jackson.dataformat.protobuf.schemagen.ProtobufSchemaGenerator;
+import com.fasterxml.jackson.dataformat.smile.SmileFactory;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import com.google.common.collect.ImmutableList;
@@ -50,6 +51,7 @@ public class JacksonExamples {
         printAvro("AVRO", testPojo);
         printCBOR("CBOR", testPojo);
         printProtoBuf("PROTOBUF", testPojo);
+        printSmile("SMILE", testPojo);
     }
 
     private void print(String type, Supplier<ObjectMapper> supplier, TestPojo object) throws Exception {
@@ -117,6 +119,13 @@ public class JacksonExamples {
         print(type, bytesToHex(protoBufData));
     }
 
+    private void printSmile(final String type, final TestPojo testPojo) throws  Exception{
+        ObjectMapper mapper = new ObjectMapper(new SmileFactory());
+        byte[] smileData = mapper.writeValueAsBytes(testPojo);
+
+        print(type, bytesToHex(smileData));
+
+    }
     public static String bytesToHex(byte[] in) {
         final StringBuilder builder = new StringBuilder();
         for(byte b : in) {

@@ -22,4 +22,7 @@ public class TestPojo {
     private int anInt;
 
     private List<String> strings;
+
+    @Builder.Default
+    private float aFloat = 1.34343434343F;
 }
