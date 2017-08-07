@@ -1,0 +1,53 @@
+group 'com.matt-howell'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-api-gateway', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-autoscaling', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-cloudformation', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dax', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-emr', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-lambda', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-kinesis', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-machinelearning', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-route53', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-stepfunctions', version: '[1.11,)'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sts', version: '[1.11,)'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '[2.9,)'
+
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-avro', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-cbor', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-ion', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-protobuf', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '[2.9,)'
+
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformats-binary', version: '[2.9,)'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformats-text', version: '[2.9,)'
+
+    compile group: 'com.google.code.gson', name: 'gson', version: '[2,)'
+    compile group: 'com.google.dagger', name: 'dagger', version: '[2,)'
+    compile group: 'com.google.guava', name: 'guava', version: '22.0'
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '[1.16,)'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
